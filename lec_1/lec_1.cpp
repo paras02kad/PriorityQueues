@@ -39,9 +39,9 @@ class maxHeap
 
             int maxEl = idx;
 
-            if (hp[lc] > hp[maxEl])
+            if ( hp[maxEl] < hp[lc])
                 maxEl = lc;
-            else if (rc < hp.size() && hp[rc] > hp[maxEl])
+            else if (rc < hp.size() &&  hp[maxEl] < hp[rc])
                 maxEl = rc;
             if (maxEl != idx)
             {
@@ -101,13 +101,27 @@ class maxHeap
 
     //! Every Sorted Array be it ascending or descending is a min and max heap but every max or min heap is not always a sorted array.
     //! We will make it like a Heap constructor.Which takes array as an input.
-//* To convert array t o heap.
-    maxHeap(vector<int> v)
+//* To convert array to heap.
+    // maxHeap(vector<int> v)
+    // {
+    //     //* TC = O(nlog(n))
+    //     hp = v;
+    //     for (int i = 1; i < hp.size(); i++)
+    //     {
+    //         unheapify(i);
+    //     }
+    // }
+
+//* To convert array to heap in the most optimized way.
+//! The following optimized heap formation method makes use of the logic that almost half the number of total nodes lies in the most bottom level of our given Heap.
+
+     maxHeap(vector<int> v)
     {
+        //* TC = O(n)
         hp = v;
-        for (int i = 1; i < hp.size(); i++)
+        for (int i = n/2; i>=0; i--)
         {
-            unheapify(i);
+            downheapify(i);
         }
     }
 };

@@ -1,0 +1,13 @@
+Certainly! Let's break down each component of the declaration `priority_queue<pair<int,pair<int,int>>, vector<pair<int,pair<int,int>>>, greater<pair<int,pair<int,int>>>> pq`:
+
+1. **`priority_queue`**: `priority_queue` is a container adapter provided by the C++ Standard Library, which implements a priority queue data structure. It is a type of queue where elements are removed based on their priority. Higher priority elements are removed before lower priority elements.
+
+2. **`pair<int,pair<int,int>>`**: This is the data type of the elements stored in the priority queue. It's a pair where the first element is an integer (`int`), and the second element is another pair of integers. This data structure is commonly used for storing a combination of three values together.
+
+3. **`vector<pair<int,pair<int,int>>>`**: This specifies the underlying container used by the priority queue. In this case, a `vector` of pairs is used. The vector stores elements of the same type as the elements stored in the priority queue. It serves as the storage mechanism for the priority queue.
+
+4. **`greater<pair<int,pair<int,int>>>`**: This is the comparison function or functor used to order the elements in the priority queue. The `greater` template class is used here, which ensures that the element with the highest priority (i.e., the smallest according to the comparison function) is at the top of the priority queue. In this case, it compares pairs of integers, and the priority is determined by the first element of the pair (i.e., `int`).
+
+5. **`pq`**: This is the name of the priority queue object. You can use this object to access and manipulate the elements stored in the priority queue.
+
+So, in summary, the declaration `priority_queue<pair<int,pair<int,int>>, vector<pair<int,pair<int,int>>>, greater<pair<int,pair<int,int>>>> pq` creates a priority queue named `pq` that stores pairs of integers and pairs of integers in a vector container, with higher priority elements (determined by the first integer in the pair) at the top of the priority queue.
